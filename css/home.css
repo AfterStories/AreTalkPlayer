@@ -1,0 +1,211 @@
+
+body,html{
+	width:1282px;
+	height:727px;
+
+	margin: 0;
+	padding:0;
+
+	font-family: "Microsoft YaHei" ! important;
+}
+a{text-decoration: none;color: #fff;}
+ul,li{
+	margin: 0;
+	padding:0;
+	list-style: none;
+
+
+}
+.clear {
+	clear:both;
+	overflow: hidden;
+} 
+header{
+	
+	width:1264px;
+	height: 42px;
+	background-color: #fff;	
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	 align-items: center;
+	}
+#logo{
+	width: 139px;
+	height: 34px;
+	float: left;
+	position: relative;
+	left: 20px;
+	background-image: url("../img/logo.png") ;
+	top: 3px;;
+}
+#RInfo{
+	width: 160px;
+	height: 34px;	
+	font-size: 18px;
+	float: right;
+	position: relative;
+	right: 20px;
+	top: 8px;
+
+}	
+
+#RInfo span{
+	margin-left: 6px;
+	color:#6999f0;
+	justify-content: center;
+	line-height:22px;
+
+}
+.reBtn{
+	float: left;
+	margin:0 4px;
+	width:68px;
+	height: 22px;
+	
+	display: flex;
+}
+#main{
+	height:685px;
+	width:100%;
+	background-color: #6999f0;
+	position: relative;
+}
+#Head {
+	width:70px;
+	height:70px;
+	position: relative;
+	left: 16px;
+	top:34px;
+	border-radius:80px;
+}
+#Head img{
+	width:80px;
+	height:80px;
+	
+	border:3px solid #fff;
+	border-radius:80px;
+}
+#username{
+	font-size: 20px;
+	position: relative;
+	left: 26px;
+	top:60px;
+}
+#Lessoniframe{
+	height:610px;
+	position: relative;
+	left:116px;
+	top:-20px;
+	width:1166px;
+}
+#iframe-Btn{
+	width: 1147px;
+	height: 45px;
+	position: absolute;
+	right: 0;
+	top: 24px;
+}
+#left-tab{
+	width: 117px;
+	height: 304px;
+	position: absolute;
+	left: 0;
+	top:180px;
+	z-index: 9999999;
+}
+.tab-btn{	
+	width: 116px;
+	height: 76px;
+	display:block;	
+	padding-bottom: 2px;
+	text-align: bottom;
+}
+.selected:hover{
+	color:#6999f0;
+}
+.MyLesson{
+	background:#6999f0 url("../img/mylesson.png") -6px 4px; 
+}
+.MyLesson-selected{
+	background:url("../img/mylessonS.png") -6px 4px; 
+	
+	
+}
+.one{	
+	background:url("../img/1to1.png") -6px 4px;
+	
+}
+.one-selected{
+	
+	background:#fff url("../img/1to1S.png") -6px 4px;
+	
+}
+.little{
+	background:url("../img/little.png") -6px 4px;
+	
+}
+.little-selected{
+	
+	background:#fff url("../img/littleS.png") -6px 4px;
+	
+}
+.myinfo{
+	background:url("../img/myinfo.png") -6px 4px;
+	
+}
+.myinfo-selected{
+	
+	background:url("../img/myinfoS.png") -6px 4px;
+	
+}
+#menu{
+	width: 116px;
+	height: 108px;
+	position: absolute;
+	left: 0;
+	bottom: 18px;
+}
+
+#menu li{
+	text-align: center;
+	color:#fff;
+	font-size:14px;
+	margin:6px 0;
+
+}
+.menu-img{
+	width:14px;
+	height: 14px;
+	margin-right: 10px;
+	vertical-align:baseline;
+}
+#menu li>a{
+	text-align: center;
+	color:#fff;
+	font-size:14px;
+}
+	.tips{
+
+    background-color: #000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 12px;
+    left: 110px;
+    line-height: 22px;
+    min-width: 12px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 590px;
+    width: 50px;
+    height: 50px;
+    z-index: 2147483647;
+}
+.layui-layer-TipsG{
+position: absolute;top: 51px;
+left: -5px;
+}
+.inner-menu{
+	cursor: pointer;
+}

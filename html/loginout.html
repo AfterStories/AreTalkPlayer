@@ -1,0 +1,44 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="changepasswords">
+		<div class="changebox" id="oldpsw"><div class="changetext">原密码：</div><input type="text" class="password"><div class="clear"></div></div>
+		<div class="changebox" id="newpsw"><div class="changetext">新密码：</div><input type="text" class="password"><div class="clear"></div></div>
+		<div class="changebox" id="turenewpsw"><div class="changetext">确认新密码：</div><input type="text" class="password"><div class="clear"></div></div>
+		
+	</div>
+</body>
+<style>
+	body{
+		width: 700px;
+		height: 450px;
+	}
+	.clear{clear: both;}
+	#changepasswords{
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: space-between;
+		width: 350px;
+		height: 150px;	
+		margin:30px auto;	
+	}
+	.changetext{
+		float:left ;
+		text-align: right;
+		width:100px;
+	}
+	.password{
+		float:right;
+	}
+.changebox{
+
+	  align-self: center;
+	  clear: both;
+}
+</style>
+</html>

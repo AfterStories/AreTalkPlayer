@@ -1,0 +1,76 @@
+body{
+	width: 700px;
+	height: 450px;
+		font-family: "Microsoft YaHei" ! important;
+}
+#downloadTitle{
+	font-size: 22px;
+	text-align: center;
+}
+#downloadContent{
+	width: 678px;
+	height: 180px;
+}
+#downloadType{
+	clear: both;
+	overflow: hidden;
+	padding-left: 10%;
+}
+.TypeBtn{
+	width: 160px;
+	height: 45px;
+	border: 1px solid #d2d2d2;
+	border-radius: 6px;
+	margin:10px 10px;
+	cursor:pointer;
+	float: left;	
+
+}
+
+.TypeBtnS{
+	color: #fff;
+	background-color: #6999f0;
+	width: 160px;
+	height: 45px;
+	border: 1px solid #d2d2d2;
+	border-radius: 6px;
+	margin:10px 10px;
+	float: left;
+	cursor: pointer;	
+}
+.TypeBtn img,.TypeBtnS img{
+	margin-right: 8px;
+	text-align: center;
+	position: relative;
+	left: 25%;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	top: 50%;
+	float: left;
+	
+}
+.dlbox{
+	float: left;
+	position: relative;
+	top: 12px;
+	left: 30px;
+
+}
+.ContentDetail{
+	color: #747474;
+	font-size: 18px;
+	padding: 10px 20px;
+	width:80%;
+	height: 150px;
+	margin: 0 auto;
+}
+#imgbox{
+	width: 100%;
+	text-align: center;
+}
+
+#D2code{
+	width:180px;
+	height:150px;
+}

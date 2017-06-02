@@ -1,0 +1,266 @@
+
+body,html,ul,li{
+	margin: 0;
+	padding:0;
+	font-family: "Microsoft YaHei" ! important;
+}
+ body,html{
+ 	width: 1282px;
+    height: 727px;
+    margin: 0;
+    padding: 0;
+
+ 	} 
+a{text-decoration: none;color: #000;}
+.clear {
+	clear:both;
+	overflow: hidden;
+} 
+header{
+	
+	width:1282px;
+	height: 76px;
+	background-color: #fff;
+	}
+#logo{
+	width: 140px;
+	height: 34px;
+	float: left;
+	position: relative;
+	left: 20px;
+	background-image: url("../img/logo.png");
+	top: 25%;
+}
+#RInfo{
+	width: 240px;
+	height: 20px;	
+	font-size: 18px;
+	float: right;
+	line-height: 76px;
+}	
+#main{
+	height: 600px;
+	background-image: url("../img/ReBack.png");
+	width: 1282px;
+	background-repeat: no-repeat;
+}
+#imgICON{
+	float: left;
+	position: relative;
+	left: 194px;
+	top:92px;
+	width: 302px;
+	height: 206px;
+	background-image: url("../img/backICON.png")
+}
+#loginbox{
+	width: 70%;
+	height: 60%;
+	background-color: #fff;
+	padding:16px 20px 15px;
+	top: 70px;
+	position: relative;
+	float: left;
+	left: 168px;	
+}
+#loginTitle{
+	width: 100%;
+	overflow:hidden; 
+}
+#LTitle{
+	font-size: 20px;
+	color:#747474;
+	float: left;
+}
+#RTitle{
+	font-size: 18px;	
+	text-decoration: none;
+	color:#f44e52;
+	float: right;
+}
+#loginInput{
+	width: 100%;
+	height: 85%;
+}
+.userLogin{
+	padding-left: 15px;
+	float: left;
+	width: 94%;
+	height: 30px;
+	position: relative;
+	right: 0;
+	border: 1px solid #bcbcbc;border-left: none;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+}
+#PhoneNumber{
+	padding-left: 15px;
+	float: left;
+	width: 90.8%;
+	height: 30px;
+	position: relative;
+	right: 0;
+	border: 1px solid #bcbcbc;border-left: none;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+}
+#Country{
+	padding-left: 15px;
+	float: left;
+	width: 90.8%;
+	height: 30px;
+	position: relative;
+	right: 0;
+	border: 1px solid #bcbcbc;border-left: none;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+}
+.loginImgBox{
+	width:30px;
+	height: 30px;
+	float: left;
+
+	border: 1px solid #cacaca;
+
+}
+.ChooseBox{
+	width:60px;
+	height: 30px;
+	float: left;
+	border: 1px solid #cacaca;
+
+}
+#CountryBox{
+		width:220px;
+	height: 30px;
+	float: left;
+	border: 1px solid #cacaca;
+
+}
+.BtnBox{
+	width:80px;
+	color:#fff;
+	background-color: #509ee1;
+	text-align:center;
+	cursor: pointer;
+	height:30px;
+	border:1px solid #cacaca;
+	line-height: 28px;
+	float:left;
+}
+
+#PhoneLocaltion{
+	width: 100%;
+	height: 100%;
+}
+#CountryLocaltion{
+	width: 100%;
+	height: 100%;
+}
+#PhoneLocaltion option{
+	text-align: center;
+}
+#PhoneIdentifying{
+	padding-left: 15px;
+	float: left;
+	width: 88.6%;;;
+	height: 30px;
+	position: relative;
+	right: 0;
+	border: 1px solid #bcbcbc;border-left: none;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+}
+#nickname{
+	float: left;
+	width: 73%;;;
+	height: 30px;
+	position: relative;
+	right: 0;
+	border: 1px solid #bcbcbc;border-left: none;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+	padding-left: 15px;
+}
+#birthday{
+	float: right;
+	width: 80%;;;
+	height: 30px;
+	position: relative;
+	border: 1px solid #bcbcbc;
+	-webkit-box-shadow:0 0 0 50px #fff inset; 
+	margin-bottom: 10px;
+	padding-left: 30px;
+	right: 5px;
+}
+#SexBox{
+    width: 160px;
+    height: 24px;
+    float: left;
+    text-align: center;
+    position: relative;
+    padding: 6px 0 0 0;
+}
+.loginImg{
+	width:15px;
+	height:22px;
+	position:relative;
+	top:12%;
+	left:20%;
+}
+#username{
+	margin: 20px 0; 
+}
+#forget{
+	
+    position: absolute;
+    right: 22px;
+	
+    bottom: 90px;;
+
+}
+#loginBTN{
+	color:#fff;
+	font-size: 18px;
+	background-color: #509ee1;;;
+	height: 35px;
+	text-align:center;
+	line-height: 35px;
+	cursor: pointer;
+	position:absolute;
+	float:left;
+	right:40%;
+	width: 300px;
+	bottom: 220px;
+}
+#Copyright{
+	font-size: 15px;
+	line-height: 12px;
+	margin-top: 6px;
+
+}
+#about{
+	width:400px;
+	margin:0 auto;
+	overflow: hidden;
+	height: 18px;
+}
+#about>li{
+	padding:0 4px;
+	list-style: none;
+	float: left;
+
+}
+.border-right{
+	border-right: 1px solid #000;
+
+}
+.border-left{
+	border-left: 1px solid #000;
+
+}
+#CopyInfo{
+	margin-top: 10px;
+	text-align: center;
+}
+

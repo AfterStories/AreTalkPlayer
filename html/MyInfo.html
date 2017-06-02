@@ -1,0 +1,102 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/MyInfo.css">
+	<link href="../css/calendar.css" rel="stylesheet">
+	<link href="../css/hover.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+</head>
+<body>
+	<div id="left" class="content">
+			<div id="Myinfo" class=" infobox">
+				<div class="info-title">我的资料</div>
+				<div id="MYinfo-box">
+					<div class="userInfo-box" id="Myinfo-HeadImg">
+						<img src="../img/MyinfoHeadimg.png" alt="" id="userHeadimg" class="Info-content">
+						<div id="user-name" class="Info-content">Conan</div>
+						<img src="../img/VIPture.png" alt="" id="VIPIcon" class="Info-content">
+					</div>
+						<div class="userInfo-box" id="Myinfo-detail">
+							<div class="detailbox"><div class="detail-tou">姓名</div><div id="name" class="detail-content-right">Conan</div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">生日</div><div id="brth" class="detail-content-right">1993-07-26</div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">性别</div><div id="sex" class="detail-content-right">女</div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">国籍</div><div id="country" class="detail-content-right"></div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">电话</div><div id="phonenum" class="detail-content-right"></div><div class="clear"></div></div>
+						</div>
+					<div class="userInfo-box" id="Myinfo-lesson">
+							<div class="detailbox"><div class="detail-tou">我的电子邮箱</div><div id="Email" class="fuck-right">Conan</div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">想学习的语言</div><div id="want" class="fuck-right"></div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">母语</div><div id="motherland" class="fuck-right"></div><div class="clear"></div></div>
+							<div class="detailbox"><div class="detail-tou">注册时间</div><div id="registryTime" class="fuck-right">女</div><div class="clear"></div></div>
+							<div class="infobtn" id="editInfo"><img src="../img/editInfo.png" alt="" id="payimg">编辑资料</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		
+			<div class="left-content" id="lesson-Card">
+				<div id="Mywallet" class="infobox" >
+					<div class="info-title">我的钱包</div>
+					<div class="wallet-detailbox"><div class="detail-content-left">AT剩余：</div><div id="AT" clas="detail-content-right">31312</div><img src="../img/price.png" alt=""></div>
+					<div class="wallet-detailbox"><div class="detail-content-left">会员截至：</div><div id="MyVIP" clas="detail-content-right">2016-09-09</div><img src="../img/vipture.png" alt=""></div>	
+
+					<div class="infobtn" id="mychangebtn">我的账单</div>					
+					<div class="infobtn" id="paybtn"><img src="../img/payimg.png" alt="" id="payimg">充值</div>
+					
+				</div>
+			<div id="Mypaper" class="infobox" >
+				<div class="info-title">我的报告(暂未开放)</div>
+				<div id="paperskin">
+						<div class="paperbox" id="paper1">
+							<div class="papertitle">Course study report</div>
+							<div class="paper-content">2016-11-09 Chinese hponetic alphabet class 	learing report</div>
+						</div>
+						<div class="paperbox" id="paper2">
+							<div class="papertitle">Course study report</div>
+							<div class="paper-content">2016-11-09 Chinese hponetic alphabet class 	learing report</div>
+						</div>
+					</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div id="right" class="content">
+		<div class="rightbox" id="CUS-service">
+			<div class="rightbox-title">课程咨询</div>
+			<div id="CUS-service-img"></div>
+			<div id="CUS-service-time">
+			400-400-4000 <br>8:00-21:00
+			</div>
+			<div id="CUS-service-btn">全球统一热线</div>
+		</div>
+		<div class="rightbox" id="consultant">
+			<div class="rightbox-title">我的专属顾问</div>
+			<div id="consultant-box">暂未安排</div>
+		</div>
+		<div class="rightbox" id="calendar">
+			<div class="rightbox-title">我的课程日历<div class="today">今天</div></div>
+			<div id="calendar-box"><div id="div1"></div></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</body>
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../lib/jquery.js"><\/script>')</script>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="../lib/modernizr.js"></script>
+<script type="text/javascript" src="../lib/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../lib/DatePicker/extraDate.js"></script>
+<script type="text/javascript" src="../js/Myinfo.js"></script>
+<script>
+	$(document).click(function(e) {  
+  
+ window.parent.closetips();
+     e.stopPropagation();  
+});
+</script>
+
+</html>

@@ -1,0 +1,99 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AreTalk学生客户端注册</title>
+	<link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+	<link rel="stylesheet" href="../css/register.css">
+
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			
+		</div>
+		<div id="RInfo">
+			<span style="color:#000;">Vip会员服务</span><span style="color:#f44e52;">400-4000-4000</span>
+		</div>
+	</header>
+	<div id="main">
+
+		<div id="loginbox">
+			<div id="loginTitle" class="clear">
+				<span id="LTitle"><a href="index.html" style="color:#f44e52">返回登录</a></span>
+				<!-- <a id="RTitle" href="">立即注册</a> -->
+			</div>
+			<div id="loginInput" class="clear">
+			<div class="loginImgBox" style="margin-top:20px;"><img src="../img/phone.png" alt="username" class="loginImg"></div>
+			<input id="username" class="userLogin"  type="text" placeholder="Your Account" /> 
+			<div class="loginImgBox"><img src="../img/password.png" alt="Password" class="loginImg"></div>
+			<input id="Password" type="password" class="userLogin" name="password" placeholder="Your Password"/>
+			<div class="ChooseBox">
+				<select id="PhoneLocaltion"> 
+
+				</select>
+			</div>
+			<input id="PhoneNumber" class="PhoneNumber"  type="text" placeholder="Your PhoneNumber" >
+			<div class="BtnBox" id="GetCode" onclick="GetCode()">
+				获取验证码
+			</div>
+			<input id="PhoneIdentifying" class="PhoneIdentifying"  type="text" placeholder="Your Identifying Code" >	
+
+			<div id="CountryBox">
+				<select id="CountryLocaltion"> 
+
+				</select>
+			</div>			
+			
+
+			<input id="nickname" class="nickname"  type="text" placeholder="Your nickname" >
+
+		
+
+			 <input id="birthday" class="layui-input birthday" placeholder="Your birthday" onclick="layui.laydate({elem: this, festival: true,istime: true, format: 'YYYY-MM-DD'})">
+			
+
+			<div id="SexBox">
+				男性：<input type="radio" name="Sex" value="1" />
+				女性：<input type="radio" name="Sex" value="0" />	
+			</div>
+		 
+			
+			</div>
+		</div>
+		<div id="loginBTN" onclick="Register();">立即注册</div>
+	</div>
+	<footer>
+		<div id="Copyright">
+			<ul id="about">
+				<li class="border-right"><a href="#">关于我们</a></li>
+				<li class="border-right"><a href="#">活动/公告</a></li>
+				<li class="border-right"><a href="#">媒体报道</a></li>
+				<li><a href="">联系我们</a></li>
+				<li class="border-left"><a href="">Teacher login</a></li>
+			</ul>
+			
+			<div id="CopyInfo">Copyright ©2017 Are Talk All rights resenver</div>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+<script type="text/javascript" src="../js/md5.js"></script>
+<script type="text/javascript" src="../lib/layui/layui.js"> </script>
+<script type="text/javascript" src="../lib/md5.js"></script>
+<script type="text/javascript" src="../js/login.js"> </script>
+<script type="text/javascript" src="../js/register.js"> </script>
+    <script>
+    $(document).ready(function() {
+
+    		$(document.body).css({
+				"overflow-x":"hidden",
+				"overflow-y":"hidden"
+			});
+
+    });
+
+    </script>
+</html>

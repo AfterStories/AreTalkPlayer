@@ -1,0 +1,44 @@
+		.mask-wrapper {
+		    position: relative;
+		    overflow: hidden;
+		}
+		.mask-inner {
+			color: #fff;
+		    position: absolute;
+		    left: 0;
+		    top: 100%;
+		    width: 160px;
+		    height: 100%;
+		    padding: 20px;
+		    line-height: 26px;
+		    -moz-transition: top ease 200ms;
+		    -o-transition: top ease 200ms;
+		    -webkit-transition: top ease 200ms;
+		    transition: top ease 200ms;
+		}
+		#baoming{
+			margin:auto;
+			text-align: center;
+			position: relative;
+			bottom: -50px;
+		}
+		.buybuybuy{
+    		background-color: #739eed;
+    		border-radius: 6px;
+    		color: #fff;
+    		height: 37px;
+    		line-height: 37px;
+    		margin: auto;
+    		position: relative;
+    		text-align: center;
+    		top: 100px;
+    		width: 125px;
+    		cursor: pointer;
+		}
+		.mask-wrapper:hover .mask-inner {
+		    top: 0;
+		}
+
+		.Card .mask-inner {
+		    background: rgba(0,0,0,.75);
+		}

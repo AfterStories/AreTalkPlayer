@@ -1,0 +1,18 @@
+.MsgBox{
+	border:1px solid #bcbcbc;
+	border-radius: 6px;
+	margin:10px auto;
+	height: 80px;
+	width: 94%;
+}
+.Msgfrom{
+	margin:4px 10px;
+ 	color:#909090;
+}
+.Msgtime{
+	margin-left: 10px;
+}
+.Msgcontent{
+	margin-left: 10px;
+	font-size: 16px;
+}

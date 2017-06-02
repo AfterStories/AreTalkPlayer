@@ -1,0 +1,418 @@
+body,html{
+	height:598px;
+	width:1166px;
+
+	margin: 0;
+	padding:0;
+	font-family: "Microsoft YaHei" ! important;
+}
+#left{
+	width: 884px;
+	height: 610px;
+
+}
+#right{
+	width:282px;
+	height:610px;
+}
+a{text-decoration: none;color: #fff;}ul,li{margin: 0;padding:0;list-style: none;}
+.clear {clear:both;overflow: hidden;} 
+.content{
+	float: left;
+	box-sizing: border-box;
+	
+	background-color: #fff;
+}
+
+.left-content{
+	width: 842px;
+	margin-left:22px;
+
+}
+#remind-title{
+	height:50px;
+	width: 842px;
+}
+#live-remind-text{
+	height:50px;
+	font-size: 16px;
+	line-height: 50px;
+
+}
+#lv-tag{
+	float: right;
+	position: relative;
+	right:20px;
+	background-color: #6999f0;
+	width:120px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+#lesson-entry{
+	width:280px;
+	height:110px;
+	float: right;
+	position: relative;
+	right:20px;
+	top:12px;
+
+
+}
+#lesson-Card{	
+	height:280px;
+	border:none;
+
+}
+.Card{
+	width: 200px;
+	height: 264px;
+	border: 1px solid #bcbcbc;
+	float: left;
+
+}
+#teacherHead{
+	float:left;
+	width:60px;
+	height:60px;
+	position: absolute;
+	left:30px;
+	bottom:28px;
+}
+#teacherHead img{
+	width:60px;
+	height:60px;
+	border-radius:60px;
+}
+#teacher-name{
+	color:#8b8b8b;
+	position: absolute;
+	left:0;
+	bottom:0;
+}
+#buy-info{
+	float: right;
+	width:125px;
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	position: absolute;
+	right:0;
+	bottom:36px;
+	color: #8b8b8b; 
+}
+#enrty-btn{
+	float: right;
+	width:125px;
+	height: 37px;
+	background-color:#739eed;
+	line-height: 37px;
+	color: #fff; 
+	border-radius:6px;
+	text-align: center;
+	position: absolute;
+	right:0;
+	bottom:0;
+
+}
+
+.card-pic{
+	width: 199px;
+	height: 132px;
+	background-image: url('../img/card.png');
+}
+.card-text{
+	font-size: 14px;
+	padding: 2px 4px; 
+}
+.card-info{
+	color:#747474;
+	
+	width:115px;
+	height: 26px;
+	float: left;
+	position: relative;
+	left: 20px;
+	bottom: -38px;	
+}
+.card-info img{
+	margin-right: 4px;
+}
+.card-teacherImg{
+	float: right;
+	position: relative;
+	right: 10px;
+	bottom: -30px;
+	width:40px;
+	height:40px;
+	border-radius:40px;
+}
+.rightbox{
+	width: 240px;
+	border: 1px solid #bcbcbc;
+	border-radius:6px;
+	margin:14px auto;
+}
+#CUS-service{
+	
+	height: 192px;
+}
+#consultant{
+	
+	height: 93px;
+}
+#calendar{
+	
+	height: 242px;
+}
+.today{
+
+	cursor: pointer;
+}
+.rightbox-title{
+    width: 240px;
+    height: 29px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #bcbcbc;
+    color: #739eed;
+    font-size: 14px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 6px 6px 0 0;
+}
+#CUS-service-img{
+	border-radius: 8px; 
+	margin:20px;
+	width: 75px;
+	height: 75px;
+	background:#e4e4e4 url("../img/kefu.png") 7.5px 7.5px no-repeat;
+}
+#CUS-service-time{
+	color: #478cfe;
+	float: right;
+	position: relative;
+	bottom: 80px;
+	right: 16px;
+
+}
+#CUS-service-btn{
+    font-size: 16px;
+    width: 180px;
+    height: 28px;
+    color: #739eed;
+    margin: 0 auto;
+    position: relative;
+    bottom: 10px;
+    left: 40px;
+}
+.infobox{
+	background-color: #f5f3f3;
+
+    width: 842px;
+    	border:1px solid #cfcece;
+	border-radius: 8px;
+}
+.info-title{
+	border-bottom: 1px solid #cfcece;
+	border-radius: 8px 8px 0 0;
+	background-color: #fff;
+	height:36px;
+	line-height: 36px;
+	padding-left: 10px;
+}
+#Myinfo{
+    margin: 15px 20px;
+    width: 842px;
+    height: 300px;
+}
+.detail-tou{
+	float: left;
+}
+.detail-content-right{
+	float: right;
+}
+#Mywallet{
+    width: 400px;
+    height: 240px;
+}
+#Mypaper{
+    width: 420px;
+    height: 240px;
+    float: right;
+    position: relative;
+    top: -240px;
+}
+
+#MYinfo-box{
+	height:262px;
+}
+#Myinfo-detail{	
+	margin-top: 20px;
+	float: left;
+	width:236px;
+	height: 230px;
+	border-right: 1px solid #cfcece;
+
+}
+#Myinfo-HeadImg{
+	position: relative;
+	top: 10px;
+	margin-top: 20px;
+	float: left;
+	width:240px;
+	height: 230px;
+	border-right: 1px solid #cfcece;
+}
+#Myinfo-lesson{
+    margin-top: 20px;
+    float: left;
+    width: 362px;
+    height: 230px;	
+}
+#editInfo{
+
+    border: 2px solid #739eed;
+    border-radius: 6px;
+    color: #739eed;
+ 
+    float: left;
+    height: 25px;
+   line-height: 25px;
+    left: 25px;
+    position: relative;
+    text-align: center;
+    top: 60px;
+    width: 100px;
+}
+#editInfo img{
+   margin: 2px 1px 2px 6px;
+   	vertical-align: middle;
+   	 float: left;
+}
+
+
+.Info-content{
+
+	display: table;
+	margin:10px auto;
+	text-align: center;
+}
+#userHeadimg{
+		width:150px;
+	height: 150px;
+}
+.detailbox{
+	position: relative;
+	top:30px;
+	width: 85%;
+	margin:0 auto;
+	padding-top: 6px;
+
+}
+.wallet-detailbox{
+	font-size: 18px;
+	position: relative;
+	top:50px;
+	width: 90%;
+	margin: 0 auto;
+	margin-right: 10px;
+
+}
+.detail-content-left{
+	text-align: right;
+	width: 100px;
+	float: left;
+}
+.detail-content-right{
+		width:100px;
+		float: right;
+}
+#wallet-detailbox img{
+	float: left;
+}
+#AT{
+	float: left;
+	width: 85px;
+}
+#MyVIP{
+	float: left;
+	width: 110px;
+}
+#MyVIP img{
+	float: left;
+}
+.fuck-right{
+	width:150px;
+	float: right;
+
+}
+
+#ATAT{
+	position: relative;
+	left:6px;
+	width: 20px;
+	height: 20px;
+}
+#IFVIP{
+	position: relative;
+	top:6px;
+	width: 30px;
+	height: 16px;
+}
+.infobtn{
+	float: right;
+	color:#739eed; 
+	width:88px;
+	height: 25px;
+	border: 2px solid #739eed;
+	border-radius:6px;
+	text-align: center;
+	cursor: pointer;
+}
+#paybtn{
+	position: relative;
+	right: 40px;
+	top:90px;
+
+}
+#paybtn img{
+	margin-right: 4px;
+	vertical-align: middle;
+}
+#mychangebtn{
+	position: relative;
+	right: 30px;
+	top:90px;
+}
+.paperbox{
+	height:45%;
+	width: 100%;
+
+}
+#paperskin{
+	width: 100%;
+	height: 84%;
+}
+#paper1{
+	border-bottom: 1px solid #cfcfcf;
+}
+.papertitle{
+	font-size: 18px;
+	position: relative;
+	top: 20px;
+	left:6px;
+}
+.paper-content{
+	font-size: 14px;
+	color: #7e7e7e;
+	position: relative;
+	top: 30px;
+	left:6px;	
+}
+#consultant-box{
+    text-align: center;
+    position: relative;
+    top: 25%;
+}

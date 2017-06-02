@@ -1,0 +1,70 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>download</title>
+		<link rel="stylesheet" href="../css/download.css">
+</head>
+<body>
+
+	<div id="downloadTitle">[Are talk] 客户端软件下载中心</div>
+	<div id="downloadType">
+
+		<div class="TypeBtnS Tabbtn" id="iphone">
+			<img src="../img/iphoneS.png" src1="../img/iphone.png" src2="../img/iphoneS.png" alt="">
+			<div class="dlbox" >iPhone</div>
+		</div>	
+
+		<div class="TypeBtn Tabbtn" id="ipad">
+			<img src="../img/ipad.png" src1="../img/ipad.png" src2="../img/ipadS.png" alt="">
+			<div class="dlbox" >iPad</div>
+		</div>	
+
+		<div class="TypeBtn Tabbtn" id="Android">
+			<img src="../img/Android.png" src1="../img/Android.png" src2="../img/AndroidS.png" alt=""/>
+			<di class="dlbox" >Android</div>
+		</div>	
+	</div>
+	<div id="downloadContent">
+
+		<div class="ContentDetail" id="iPhoneContent">
+			<div class="downConTile">iPhone客户端下载</div>
+			<div class="downDetail">iPhone客户端下载：请您使用手机扫描二维码功能，扫描一下二维码获得AppStore下载地址。</div>
+		</div>
+		<div class="ContentDetail" id="iPadContent" style="display:none">
+			<div class="downConTile">ipad客户端下载</div>
+			<div class="downDetail">ipad客户端下载客户端下载：请您使用手机扫描二维码功能，扫描一下二维码获得AppStore下载地址。</div>
+		</div>
+		<div class="ContentDetail" id="AndroidContent" style="display:none">
+			<div class="downConTile">Android客户端下载</div>
+			<div class="downDetail">Android客户端客户端下载：请您使用手机扫描二维码功能，扫描一下二维码获得应用商店下载地址。</div>			
+		</div>
+	</div>
+	<div id="imgbox">
+<img id="D2code" src="../img/2Dcode.png" alt="">	
+</div>
+
+
+
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+<script>
+
+$('.Tabbtn').bind("click",function(){  
+	$("#downloadType").find("img").each(function(a, b){
+		$(this).attr("src", $(this).attr("src1"));
+	});
+	var img = $(this).find("img");	
+	img.attr("src", img.attr("src2"));
+	$(this).addClass('TypeBtnS').siblings().removeClass('TypeBtnS').addClass('TypeBtn');
+
+
+		var cur = $(this).index();
+		$('.ContentDetail').eq(cur).show().siblings('.ContentDetail').hide();
+
+ });
+
+</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!-- saved from url=(0016)http://localhost -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="../css/MyLesson.css">
+	<link href="../css/calendar.css" rel="stylesheet">
+	<link href="../css/hover.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" href="../lib/owl/owl.carousel.css">
+</head>
+<body>
+	<div id="left" class="content">
+		<div class="left-content" id="remind-title">
+		我的一对一 课程
+		</div>
+
+		
+		<div class="left-content" id="remind-lesson">
+			<img src="../img/lessonIMG.png" alt="" id="remind-lesson-img">
+			<div id="remind-lesson-detail">
+				<span id="lesson-name">《小公主系列  I Feel Sick！》</span>
+				<span id="lv-tag"></span>				
+			</div>
+			<div id="remind-lesson-dec">
+				春天来了，气温变化多端，很多小朋友都感冒咳嗽，那么不舒服要怎么用汉语表达呢？
+				听听我们小公主怎么说吧！
+			</div>
+			<div id="remind-lesson-info">
+				<img src="../img/clock.png" alt="" id="time"><div id="les-dur">45Min</div>
+				<img src="../img/stundent.png" alt="" id="stuNum"><div id="les-num"></div>
+			</div>
+			<div id="lesson-entry">
+				<div id="teacherHead">
+					<img src="../img/teacherHEAD.png" alt="teacher">
+				</div>
+				<span id="teacher-name">教师：Rochelle</span>
+				<span id="buy-info">已购买</span>
+				<div id="enrty-btn">进入教室</div>
+
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="left-content" id="lesson-Card">
+<div class="owl-carousel" id="CARD">
+	
+
+	
+
+</div>
+
+</div>
+</div>
+	</div>
+	<div id="right" class="content">
+		<div class="rightbox" id="CUS-service">
+			<div class="rightbox-title">课程咨询</div>
+			<div id="CUS-service-img"></div>
+			<div id="CUS-service-time">
+			400-400-4000 <br>8:00-21:00
+			</div>
+			<div id="CUS-service-btn">全球统一热线</div>
+		</div>
+		<div class="rightbox" id="consultant">
+			<div class="rightbox-title">我的专属顾问</div>
+			<div id="consultant-box">暂未安排</div>
+		</div>
+		<div class="rightbox" id="calendar">
+			<div class="rightbox-title">我的课程日历<div class="today">今天</div></div>
+			<div id="calendar-box"><div id="div1"></div></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+
+</body>
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../lib/jquery.js"><\/script>')</script>
+
+
+<script type="text/javascript" src="../lib/owl/owl.carousel.js"></script>
+<script type="text/javascript" src="../js/Mylesson.js"></script>
+<script type="text/javascript" src="../lib/modernizr.js"></script>
+<script type="text/javascript" src="../lib/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../lib/DatePicker/extraDate.js"></script>
+
+
+
+<script>
+
+
+$(document).ready(function() {
+    var owl = $('.owl-carousel');
+      owl.owlCarousel({ 
+        margin: 10,
+        nav: true,
+        loop: true,
+        dots:false,
+        items:4,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        stopOnHover:true
+      })
+
+
+$(document).click(function(e) {  
+  
+ window.parent.closetips();
+     e.stopPropagation();  
+});
+				
+
+})
+
+
+
+</script>
+</html>

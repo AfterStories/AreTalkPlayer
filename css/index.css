@@ -1,0 +1,219 @@
+
+body,html{
+	width:1264px;
+	height:682px;
+	max-width: 1264px;
+	max-height: 682px;
+	margin: 0;
+	padding:0;
+
+	font-family: "Microsoft YaHei" ! important;
+}
+a{text-decoration: none;color: #fff;}
+ul,li{
+	margin: 0;
+	padding:0;
+	list-style: none;
+
+}
+.clear {
+	clear:both;
+	overflow: hidden;
+} 
+header{
+	
+	width:1264px;
+	height: 42px;
+	background-color: #fff;	
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	 align-items: center;
+	}
+#logo{
+	width: 139px;
+	height: 34px;
+	float: left;
+	position: relative;
+	left: 20px;
+	background-image: url("../img/logo.png") ;
+}
+#RInfo{
+	width: 150px;
+	height: 34px;	
+	font-size: 18px;
+	float: right;
+	position: relative;
+	right: 20px;	
+	display: flex;
+    justify-content: center;
+    align-items: center;
+
+}	
+
+#RInfo span{
+	margin-left: 6px;
+	color:#6999f0;
+	justify-content: center;
+	line-height:22px;
+
+}
+.reBtn{
+	float: left;
+	margin:auto;
+	width:68px;
+	height: 22px;
+	
+	display: flex;
+    justify-content: center;
+}
+main{
+	height:643px;
+	width:100%;
+	background-color: #6999f0;
+	position: relative;
+}
+#Head {
+	width:70px;
+	height:70px;
+	position: relative;
+	left: 18px;
+	top:18px;
+}
+#Head img{
+	width:70px;
+	height:70px;
+	border-radius:70px;
+	border:3px solid #fff;
+}
+#username{
+	font-size: 20px;
+	position: relative;
+	left: 26px;
+	top:25px;
+}
+#Lessoniframe{
+	height:598px;
+	width:1148px;
+	position: absolute;
+	right:0px;
+	top:45px;
+}
+#iframe-Btn{
+	width: 1147px;
+	height: 45px;
+	position: absolute;
+	right: 0;
+}
+#left-tab{
+	width: 118px;
+	height: 304px;
+	position: absolute;
+	left: 0;
+	top:145px;
+}
+.tab-btn{	
+	width: 118px;
+	height: 76px;
+	display:flex;
+	padding-bottom: 2px;
+    justify-content: center;
+    align-items: flex-end;	
+}
+.selected:hover{
+	color:#6999f0;
+}
+.MyLesson{
+	background:#6999f0 url("../img/mylesson.png") 45px 15px no-repeat; 
+	border-top:1px solid #89adee;
+	border-bottom:1px solid #89adee;
+	color:#fff;	
+
+}
+.MyLesson-selected{
+	background:#fff url("../img/mylessonS.png") 45px 15px no-repeat; 
+	border-top:1px solid #89adee;border-bottom:1px solid #89adee;
+	color:#6999f0;
+}
+.one{	
+	background:url("../img/1to1.png") 38px 15px no-repeat;
+	border-bottom: 1px solid #89adee;
+}
+.one-selected{
+	color:#6999f0;
+	background:#fff url("../img/1to1S.png") 38px 15px no-repeat;
+	border-bottom: 1px solid #89adee;
+}
+.little{
+	background:url("../img/little.png") 44px 15px no-repeat;
+	border-bottom:1px solid #89adee;
+}
+.little-selected{
+	color:#6999f0;
+	background:#fff url("../img/littleS.png") 44px 15px no-repeat;
+	border-bottom:1px solid #89adee;
+}
+.myinfo{
+	background:url("../img/myinfo.png") 44px 15px no-repeat;
+	border-bottom:1px solid #89adee;
+}
+.myinfo-selected{
+	color:#6999f0;
+	background:#fff url("../img/myinfoS.png") 44px 15px no-repeat;
+	border-bottom:1px solid #89adee;
+}
+#menu{
+	width: 116px;
+	height: 108px;
+	position: absolute;
+	left: 0;
+	bottom:30px;
+}
+
+#menu li{
+	text-align: center;
+	color:#fff;
+	font-size:14px;
+	margin:6px 0;
+
+}
+.menu-img{
+	width:14px;
+	height: 14px;
+	margin-right: 10px;
+	vertical-align:baseline;
+}
+#menu li>a{
+	text-align: center;
+	color:#fff;
+	font-size:14px;
+}
+	.tips{
+
+    background-color: #000;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 12px;
+    left: 116px;
+    line-height: 22px;
+    min-width: 12px;
+    padding: 5px 10px;
+    position: relative;
+    top: 442px;
+    width: 50px;
+    z-index: 2147483647;
+}
+.layui-layer-TipsG{
+    border-color: transparent;
+    border-style: dashed;
+    border-width: 8px;
+    height: 0;
+    left: -8px;
+    position: absolute;
+    top: 38px;
+    width: 0;
+}
+.inner-menu{
+	cursor: pointer;
+}

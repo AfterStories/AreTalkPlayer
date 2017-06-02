@@ -1,0 +1,85 @@
+
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Lesson</title>
+
+	<link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+	<link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			
+		</div>
+		<div id="RInfo">
+<!-- 
+<div id="re" class="reBtn"><img class="reBtnImg" src="../img/re.png" alt=""><span>重启</span></div>
+<div id="F5" class="reBtn"><img class="reBtnImg" src="../img/F5.png" alt=""><span>刷新</span></div> 
+-->
+		</div>
+	</header> 
+	<div id="main">
+	 <div id="iframe-Btn">
+	 	<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="margin:0;">
+  			<ul id="MyUl" class="layui-tab-title" style="border:none;">
+  			   <li class="layui-this"><a href="MyLesson.html" target="LessonFrame">一对一课程</a></li>
+
+  			   <li><a href="MyLittle.html" target="LessonFrame">小班课</a></li>
+  			</ul>
+
+  			<ul id="OneToOneUl" class="layui-tab-title" style="border:none;display: none;">
+  			   <li class="layui-this"><a href="MyLesson.html" target="LessonFrame">全部一对一</a></li>  			   
+  			</ul>
+
+  			<ul id="littleUl" class="layui-tab-title" style="border:none;display: none;">
+  			   <li class="layui-this"><a href="MyLesson.html" target="LessonFrame">全部小班课</a></li>
+  			</ul>
+  			<ul id="infoUl" class="layui-tab-title" style="border:none;display: none;">
+  			   <li class="layui-this"><a href="MyLesson.html" target="LessonFrame">我的资料</a></li>
+  			</ul>   			
+  		</div>      
+	 </div>
+	<div id="Head">
+		<img src="../img/MyinfoHeadimg.png" alt="">
+	</div>
+	<div id="username"></div>
+
+		<div id="left-tab">
+			<a class="tab-btn MyLesson-selected" id="MyLesson" href="MyLesson.html" target="LessonFrame"></a>
+			<a class="tab-btn MyLesson"  style="display: none" href="MyLesson.html" target="LessonFrame"></a>
+
+			<a class="tab-btn one"  id="one" href="OneToOne.html" target="LessonFrame"></a>
+			<a class="tab-btn one-selected"  style="display: none;" href="OneToOne.html" target="LessonFrame"></a>
+
+			<a class="tab-btn little" id="little" href="Little.html" target="LessonFrame"></a>				
+			<a class="tab-btn little-selected" style="display: none;" href="Little.html" target="LessonFrame"></a>
+
+			<a class="tab-btn myinfo" id="myinfo"  href="MyInfo.html" target="LessonFrame"></a>
+			<a class="tab-btn myinfo-selected" style="display: none;" href="MyInfo.html" target="LessonFrame"></a>
+		</div>
+		
+			<ul id="menu">
+				<li id="msgcenter" class="menu-li menu-open"><img src="../img/msgcenter.png" class="menu-img" alt=""><a href="#">消息中心</a></li>
+				<li id="usercenter" class="menu-li menu-open"><img src="../img/usercenter.png" class="menu-img" alt=""><a href="#">会员中心</a></li>
+				<li id="download" class="menu-li menu-open"><img src="../img/download.png" class="menu-img" alt=""><a href="#">下载中心</a></li>
+				<li id="system" class="menu-li menu-tips"><img src="../img/system.png" class="menu-img" alt=""><a href="#">系统菜单</a></li>
+			</ul>
+		<div id="tips" class="tips" style="display: none;"><div class="inner-menu" id="updata" >软件升级</div><!-- <div class="inner-menu" id="subBUG">提交Bug</div> --><div class="inner-menu" id="changepsw">修改密码</div><!-- <div class="inner-menu" id="loginout">退出登陆</div> --><img class="layui-layer-TipsG layui-layer-TipsR" src="../img/san.png"></img></div>
+
+		<iframe src="MyLesson.html" name="LessonFrame" frameborder="0" id="Lessoniframe"  scrolling="no"></iframe>
+	</div>
+
+</body>
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script src="../js/home.js" charset="utf-8"></script>
+<script>
+	function closetips(){
+	$(".tips").hide();  
+}
+</script>
+</html>

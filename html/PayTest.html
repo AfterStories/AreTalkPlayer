@@ -1,0 +1,96 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AreTalk学生客户端登录</title>
+	<link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+	<header>
+		<div id="logo">
+			
+		</div>
+		<div id="RInfo">
+			<span style="color:#000;">Vip会员服务</span><span style="color:#f44e52;">400-4000-4000</span>
+		</div>
+	</header>
+	<div id="main">
+		<div id="imgICON">
+			
+		</div>
+
+		<form id="fofo">
+			currencyId  1<input type="text" name="currencyId">
+			goodsCount 1<input type="text" name="goodsCount">
+			goodsType 7<input type="text" name="goodsType">
+			channel 5<input type="text" name="channel">
+			<!-- JSESSIONID<input  id="JSE" type="text" name="jsessionid"> -->
+			
+		     <input  type="submit" value="啊" >  
+
+		</form>
+
+		<div id="loginbox">
+			<div id="loginTitle" class="clear">
+				<span id="LTitle">会员登录</span>
+				<a id="RTitle" href="">立即注册</a>
+			</div>
+			<div id="loginInput" class="clear">
+			<div class="loginImgBox" style="margin-top:20px;"><img src="../img/phone.png" alt="username" class="loginImg"></div>
+			<input id="username" class="userLogin"  type="text" placeholder="Your Account" > 
+			<div class="loginImgBox"><img src="../img/password.png" alt="Password" class="loginImg"></div>
+			<input id="Password" type="password" class="userLogin" name="password" placeholder="Your Password"/>
+			<input type="checkbox" id="autoLogin"><span>自动登录</span>
+			<a id="forget" href=" #">忘记密码？</a>
+			<div id="loginBTN" onclick="Login()">立即登录</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div id="Copyright">
+			<ul id="about">
+				<li class="border-right"><a href="#">关于我们</a></li>
+				<li class="border-right"><a href="#">活动/公告</a></li>
+				<li class="border-right"><a href="#">媒体报道</a></li>
+				<li><a href="">联系我们</a></li>
+				<li class="border-left"><a href="">Teacher login</a></li>
+			</ul>
+			
+			<div id="CopyInfo">Copyright ©2017 Are Talk All rights resenver </div>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+<script type="text/javascript" src="../lib/md5.js"> </script>
+<script type="text/javascript" src="../js/login.js"> </script>
+    <script>
+    $(document).ready(function() {
+
+    		$(document.body).css({
+				"overflow-x":"hidden",
+				"overflow-y":"hidden"
+			});
+
+
+         function getSessionId(){  
+                var c_name = 'JSESSIONID';  
+                if(document.cookie.length>0){  
+                   c_start=document.cookie.indexOf(c_name + "=")  
+                   if(c_start!=-1){   
+                     c_start=c_start + c_name.length+1   
+                     c_end=document.cookie.indexOf(";",c_start)  
+                     if(c_end==-1) c_end=document.cookie.length  
+                     return unescape(document.cookie.substring(c_start,c_end));  
+                   }  
+                }  
+            } 
+
+
+
+    });
+
+    </script>
+
+</html>

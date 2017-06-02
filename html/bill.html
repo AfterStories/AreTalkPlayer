@@ -1,0 +1,113 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bill</title>
+	<link rel="stylesheet" href="../css/bill.css">
+</head>
+<body>
+<div class="lesson-title-box">
+	<div class="lesson-title">
+		我的购买记录
+	</div>
+	<div class="shengyu">
+		剩余:
+	</div>
+	<div class="lesson-price">
+		300AT
+	</div>
+	<img class="price-icon" src="../img/price.png">
+</div>	
+	<div class="MsgBox">
+		<li class="Msgfrom">消费<span class="msgTime">2017-3-20</span></li>
+		<div class="Msgcontent">30<span>AT</span></div>
+	</div>
+								
+
+
+
+<script type="text/javascript" src="../lib/jquery.js"></script>	
+
+<script type="text/javascript">
+
+function getCookie(c_name) {
+  var c_value = document.cookie;
+  var c_start = c_value.indexOf(" " + c_name + "=");
+  if (c_start == -1) {
+      c_start = c_value.indexOf(c_name + "=");
+  }
+  if (c_start == -1) {
+      c_value = null;
+  }
+  else {
+      c_start = c_value.indexOf("=", c_start) + 1;
+      var c_end = c_value.indexOf(";", c_start);
+      if (c_end == -1) {
+          c_end = c_value.length;
+      }
+      c_value = unescape(c_value.substring(c_start, c_end));
+  }
+  return c_value;
+}
+var Sessionid = getCookie("JSESSIONID");
+
+
+    $(document).ready(function() {
+
+    		$(document.body).css({
+				"overflow-x":"hidden"
+				
+			});
+
+
+    $.ajax({
+        type: "POST",
+        url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/getMyWallet.action;jsessionid='+Sessionid,
+        data: {},
+        success: function (data) {
+        	$('.lesson-price').text(data.data.amountInfo.balance);
+        		for (var i = 0; i <data.data.amountInfo.cost.length; i++) {
+        			var time = data.data.amountInfo.cost[i].time.replace(/T/g,' ');        			 
+	        			var MsgBox = '<div class="MsgBox"><li class="Msgfrom">消费<span class="msgTime">'+time+'</span></li><div class="Msgcontent">'+data.data.amountInfo.cost[i].coin+'<span>AT</span></div></div>';
+	        				$("body").append(MsgBox);
+        		}
+
+            },
+        error: function () {
+                  alert("登陆超时，请重新登陆");
+                 }
+        });
+
+        
+
+})
+
+
+/*var lessonId = parent.document.getElementById("layui-layer-iframe1").contentWindow.location.href;
+*/
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+console.log(GetQueryString("lessonId"))
+
+var myDate = new Date();
+//获取当前年
+var year=myDate.getFullYear();
+//获取当前月
+var month=myDate.getMonth()+1;
+//获取当前日
+var date=myDate.getDate(); 
+var h=myDate.getHours();       //获取当前小时数(0-23)
+var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+var s=myDate.getSeconds();  
+
+var nowNY=year+'-'+month+"-"+date;
+
+</script>
+
+</body>
+</html>

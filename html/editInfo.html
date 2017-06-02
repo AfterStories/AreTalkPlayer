@@ -1,0 +1,56 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/editInfo.css">
+	<link href="../css/calendar.css" rel="stylesheet">
+	<link href="../css/hover.css" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+</head>
+<body>
+	<div id="left" class="content">
+			<div id="Myinfo" class=" infobox">
+				<div id="MYinfo-box">
+					<div class="userInfo-box" id="Myinfo-HeadImg">
+						<img src="../img/MyinfoHeadimg.png" alt="" id="userHeadimg" class="Info-content">
+
+					</div>
+						<div class="userInfo-box" id="Myinfo-detail">
+							<div class="detailbox"><div>昵称</div><div id="name" class="detail-content-right"><input type="text" name="" id="nameinput" placeholder="Your nickname"></div></div>
+							<div class="detailbox"><div>生日</div><div id="brth" class="detail-content-right"><input type="text" name="" id="brthinput" placeholder="Example:2012-10-12"></div></div>
+							<div class="detailbox"><div>性别</div><div id="sex" class="detail-content-right"><input type="radio" name="sex" class="sexinput"  value="1">男<input type="radio" name="sex" class="sexinput"  value="2">女</div></div>
+							<div class="infobtn " id="subchange" onclick="save()">保存修改</div>
+
+						</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		
+
+	</div>
+
+	<div class="clear"></div>
+</body>
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="../lib/jquery.js"><\/script>')</script>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="../lib/modernizr.js"></script>
+
+<script type="text/javascript" src="../js/editInfo.js"></script>
+<script>
+
+	$(document.body).css({
+		"overflow-x":"hidden",
+		"overflow-y":"hidden"
+	});
+
+	$(document).click(function(e) {  
+  
+ 		window.parent.parent.closetips();
+   
+});
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>消息中心</title>
+	<link rel="stylesheet" href="../css/msgcenter.css">
+</head>
+<body>
+	<div class="MsgBox">
+		<div class="Msgfrom">系统消息<span class="msgTime">2017-3-20</span></div><div class="Msgcontent">暂无最新消息</div>
+	</div>
+
+<script type="text/javascript" src="../lib/jquery.js"></script>	
+<script type="text/javascript">
+
+
+var myDate = new Date();
+//获取当前年
+var year=myDate.getFullYear();
+//获取当前月
+var month=myDate.getMonth()+1;
+//获取当前日
+var date=myDate.getDate(); 
+var h=myDate.getHours();       //获取当前小时数(0-23)
+var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+var s=myDate.getSeconds();  
+
+var nowNY=year+'-'+month+"-"+date;
+
+	$(".msgTime").html(nowNY)
+</script>
+
+</body>
+</html>

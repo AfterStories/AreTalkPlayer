@@ -1,0 +1,126 @@
+<!-- saved from url=(0016)http://localhost -->
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+    body{
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    }
+    .clear{clear: both;}
+    #changepasswords{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    width: 350px;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    
+    }
+    .changetext{
+  float: left;
+    height: 100%;
+    text-align: right;
+    width: 100px;
+    line-height: 30px;
+    color:#747474;
+    }
+    .password{
+    float: right;
+    height: 100%;
+    width: 60%;
+    }
+.changebox{
+    align-self: center;
+    clear: both;
+    height: 30px;
+    width: 100%;
+}
+#sub{
+    background-color: #739eed;
+    border-radius: 6px;
+    bottom: 0;
+    color: #fff;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    width: 125px;
+    position: relative;
+    left: 336px;
+    top:150px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<div id="changepasswords">
+		<div class="changebox" ><div class="changetext">原密码：</div><input type="text" class="password" id="oldpsw"><div class="clear"></div></div>
+		<div class="changebox" ><div class="changetext">新密码：</div><input type="password" class="password" id="newpsw"><div class="clear"></div></div>
+		<div class="changebox" ><div class="changetext">确认新密码：</div><input type="password" class="password" id="turenewpsw"><div class="clear"></div></div>
+		
+	</div>
+	
+		<div id="sub">确认</div>
+	
+<script type="text/javascript" src="../lib/jquery.js"> </script>
+ <script type="text/javascript" src="../lib/md5.js"></script>   
+    <script type="text/javascript">
+        function getCookie(c_name) {
+              var c_value = document.cookie;
+              var c_start = c_value.indexOf(" " + c_name + "=");
+              if (c_start == -1) {
+                  c_start = c_value.indexOf(c_name + "=");
+              }
+              if (c_start == -1) {
+                  c_value = null;
+              }
+              else {
+                  c_start = c_value.indexOf("=", c_start) + 1;
+                  var c_end = c_value.indexOf(";", c_start);
+                  if (c_end == -1) {
+                      c_end = c_value.length;
+                  }
+                  c_value = unescape(c_value.substring(c_start, c_end));
+              }
+              return c_value;
+}
+
+
+var Sessionid = getCookie("JSESSIONID");
+
+$("#sub").click(function(){
+        var password = hex_md5($("#oldpsw").val()),
+            newPassword = hex_md5($("#newpsw").val()),
+            turenewpsw = hex_md5($("#turenewpsw").val());  
+        
+         $.ajax({
+              dataType:'json',
+              type:'POST', 
+              async:false,                      
+              data:{password:password,newPassword:turenewpsw},       
+              url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/modifyPassword.action;jsessionid='+Sessionid,
+              success:function(data) {
+                if(data.data.status=="success"){
+                    alert("修改成功，请重新登陆 ") ;
+                    parent.layer.closeAll(); 
+                    parent.location.href="../html/login.html"       
+                  }
+              },
+              error:function(data) {
+                    alert(data.errMsg)
+                  }
+              }); 
+
+});
+
+    </script>
+</body>
+
+</html>
