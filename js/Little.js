@@ -76,7 +76,7 @@ var Sessionid = getCookie("JSESSIONID");
            s = "0"+s
         }
         var NY=year+'-'+month+"-";
-        var ZTime = " "+h+":"+m+":"+s;
+        var ZTime = " "+"00"+":"+"00"+":"+"00";
         var NowRiQi = NY+riqi+ZTime;
 
         return NowRiQi
@@ -94,34 +94,30 @@ function GetLesson(minD,maxD){
         url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/getLessonsByDate.action;jsessionid='+Sessionid,
         data: {minDate:minD,maxDate:maxD,type:1},
         success: function (data) {
-          $(".owl-carousel").empty();//清空之前内容再添加
-          $("#remind-lesson").empty();//清空之前大图课内容再添加 
+          $(".owl-carousel").empty();
+          $("#remind-lesson").empty();
 
+if(data.data.lessonList.length==0){
+  $("#remind-lesson").hide();
+  $("#lesson-Card").hide();
+  $("#nobuybox").show();
+  return;
+}
 
 var BigLesCARD = '<img src="http://211.159.152.210:8188'+data.data.lessonList[0].headurl+'" alt="" id="remind-lesson-img"><div id="remind-lesson-detail"><span id="lesson-name">'+data.data.lessonList[0].title+'</span><span id="lv-tag"></span></div><div id="remind-lesson-dec">'+data.data.lessonList[0].lessonDescribe+'</div><div id="remind-lesson-info"><img src="../img/clock.png" alt="" id="time"><div id="les-dur">'+data.data.lessonList[0].duration+'Min</div><img src="../img/stundent.png" alt="" id="stuNum"><div id="les-num">'+data.data.lessonList[0].currentStudents+'</div></div><div id="lesson-entry"><div id="teacherHead"><img src="http://211.159.152.210:8188'+data.data.lessonList[0].userImgUrl+'" alt="teacher"></div><span id="teacher-name">教师：'+data.data.lessonList[0].name+'</span><span id="buy-info"></span><div id="enrty-btn" onclick="buylesson('+data.data.lessonList[0].lessonId+')">购买</div><div class="clear"></div>'
 
  $("#remind-lesson").append(BigLesCARD);
-          for (var i = 0; i<data.data.lessonList[0].lessonLabel.length; i++) {
-              if(i==data.data.lessonList[0].lessonLabel.length){
-                $("#lv-tag").text(data.data.lessonList[0].lessonLabel[i].label);
-              }else{
-                $("#lv-tag").text(data.data.lessonList[0].lessonLabel[i].label+"、");
-              }
+          for (var j = 0; j<data.data.lessonList[0].lessonLabel.length; j++) {
+            if(j == 0){
+              $("#lv-tag").append(data.data.lessonList[0].lessonLabel[j].label);
               
+              }
+              else{
+              $("#lv-tag").append(" " + data.data.lessonList[0].lessonLabel[j].label);
             }
+          }
 
 
-
-/*        	$("#remind-lesson #remind-lesson-img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[0].headurl);
-        	$("#lesson-name").html(data.data.lessonList[0].title);
-          $("#remind-lesson-dec").html(data.data.lessonList[0].lessonDescribe);
-
-        	$("#les-dur").html(data.data.lessonList[0].duration+"Min");
-          $("#les-num").html(data.data.lessonList[0].currentStudents);
-           	
-        	$("#teacher-name").html("教师："+data.data.lessonList[0].name);
-        	$("#teacherHead img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[0].userImgUrl);*/
- 
 
   /*小图课*/
  
@@ -134,7 +130,7 @@ var BigLesCARD = '<img src="http://211.159.152.210:8188'+data.data.lessonList[0]
         headurl = "../img/card.png"                  
         };
 
-      var Les_Card ='<div class="Card mask-wrapper"><div class="card-pic" style="background-image:url('+headurl+')";></div><div class="card-text">'+data.data.lessonList[i].name+'老师：'+data.data.lessonList[i].title+'</div><div class="card-info"><img src="../img/clock.png" alt=""><span>'+Time+'</span></div><img class="card-teacherImg" src="http://211.159.152.210:8188'+data.data.lessonList[i].userImgUrl+'" alt=""><div class="mask-inner">'+data.data.lessonList[i].lessonDescribe+'<div class="buybuybuy" onclick="buylesson('+data.data.lessonList[i].lessonId+')">购买本课</div></div></div>'
+      var Les_Card ='<div class="Card mask-wrapper"><div class="card-pic"><img src="'+headurl+'" alt="" style="width:100%;height:100%"/></div><div class="card-text">'+data.data.lessonList[i].name+'老师：'+data.data.lessonList[i].title+'</div><div class="card-info"><img src="../img/clock.png" alt=""><span>'+Time+'</span></div><img class="card-teacherImg" src="http://211.159.152.210:8188'+data.data.lessonList[i].userImgUrl+'" alt=""><div class="mask-inner">'+data.data.lessonList[i].lessonDescribe+'<div class="buybuybuy" onclick="buylesson('+data.data.lessonList[i].lessonId+')">购买本课</div></div></div>'
       $("#CARD").append(Les_Card);
           };  
 
@@ -154,13 +150,20 @@ var BigLesCARD = '<img src="http://211.159.152.210:8188'+data.data.lessonList[0]
        },
         error: function (a,b,c) {
 
-                	/*alert("登陆超时，请重新登陆");*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
           }
         });
 
   
 
-}
+$('html, body', window.top.document).animate({scrollTop:0}, 10);;
+
+
+}//函数结束
 
 
 
@@ -189,10 +192,3 @@ $(".live-remind-text").click(function(){
 
 });
 
-/*
-$(".byubuybuy").onclick(function({
-
-
-}))
-
-*/

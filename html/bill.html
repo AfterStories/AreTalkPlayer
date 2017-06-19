@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>bill</title>
+  <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
 	<link rel="stylesheet" href="../css/bill.css">
 </head>
 <body>
@@ -28,6 +29,8 @@
 
 
 <script type="text/javascript" src="../lib/jquery.js"></script>	
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+
 
 <script type="text/javascript">
 
@@ -50,7 +53,13 @@ function getCookie(c_name) {
   }
   return c_value;
 }
+
 var Sessionid = getCookie("JSESSIONID");
+
+ layui.use('layer', function(){
+  var layer = layui.layer;
+});
+
 
 
     $(document).ready(function() {
@@ -71,11 +80,17 @@ var Sessionid = getCookie("JSESSIONID");
         			var time = data.data.amountInfo.cost[i].time.replace(/T/g,' ');        			 
 	        			var MsgBox = '<div class="MsgBox"><li class="Msgfrom">消费<span class="msgTime">'+time+'</span></li><div class="Msgcontent">'+data.data.amountInfo.cost[i].coin+'<span>AT</span></div></div>';
 	        				$("body").append(MsgBox);
-        		}
+
+                  }
 
             },
-        error: function () {
-                  alert("登陆超时，请重新登陆");
+        error: function () {                  
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
+
                  }
         });
 

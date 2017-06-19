@@ -37,7 +37,11 @@ $(document).ready(function(){
                    $("#userHeadimg").attr("src",'http://211.159.152.210:8188'+data.data.userInfo.avatar);              
                 },
             error: function (a,b,c) {
-                /*alert("登陆超时，请重新登陆");*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
             }
        });
 
@@ -67,12 +71,14 @@ function save() {
        url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/updateUserInfo.action;jsessionid='+Sessionid,
        data: updata,
        success: function (data) {  
-                     
-             layer.msg('保存成功'); 
-         
+             layer.msg('保存成功');          
            },
        error: function (a,b,c) {
-           /*alert("登陆超时，请重新登陆");*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
             }
        });
           

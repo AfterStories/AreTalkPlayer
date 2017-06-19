@@ -111,15 +111,16 @@ function getCookie(c_name) {
 		var Sessionid = getCookie("JSESSIONID");
 
 
-    		$(document.body).css({
+    	$(document.body).css({
 				"overflow-x":"hidden",
 				"overflow-y":"hidden"
 			});
+    
 			$('#Lessoniframe').css({
 				"overflow-x":"hidden",
 				"overflow-y":"hidden"
 			});
-
+        
            //显示用户头像用户名
             $.ajax({
                 type: "POST",
@@ -127,16 +128,22 @@ function getCookie(c_name) {
                 data: {},
                 success: function (data) {
                 	if (data.data==undefined) {
-                	 		/*alert("登陆超时，请重新登陆");*/
-               				/*location.href="../html/login.html";*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
                 };
                 $('#Head img').attr('src','http://211.159.152.210:8188'+data.data.userInfo.avatar);
                 $('#username').html(data.data.userInfo.user.nickname);
 
                 },
                 error: function () {
-                        	/*alert("登陆超时，请重新登陆");*/
-                        	/*location.href="../html/login.html";*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
                          }
                 });
                      

@@ -49,20 +49,86 @@ $(document).ready(function() {
               
               $("#buyAll").html("购买整套课程:"+totalPrice+"AT");
               $(".lesson-price").html(singlePrice+'AT/节');
+              var isBuyAllClass = false;
+              for(var i = 0 ; i < data.data.lesson.lessonBuyList.length; i ++){
+                if(data.data.lesson.lessonBuyList[i].classNo == 0){
+                  isBuyAllClass = true;
+                  break;
+                }
+              }
 
-
-              for(i=0;i<data.data.lesson.lessonDetail.length;i++){
+              for(var i=0;i<data.data.lesson.lessonDetail.length;i++){
 
                 var classtitle = data.data.lesson.lessonDetail[i].title;
                 var classNo = data.data.lesson.lessonDetail[i].classNo;
                 var startTime = (data.data.lesson.lessonDetail[i].startTime).replace(/T/g,' ');
                 var classDec = data.data.lesson.lessonDetail[i].lessonDescribe;
-                var Lessonclass = '<div class="MsgBox" id='+classNo+'><li class="Msgfrom" >第'+classNo+'节'+"  "+classtitle+'<span class="msgTime">'+startTime+'</span></li><div class="Msgcontent">'+classDec+'</div><div class="buy-btn">购买</div></div>'
+
+                if(isBuyAllClass == true){
+                  var Lessonclass = '<div class="MsgBox" id='+classNo+'><li class="Msgfrom" >第'+classNo+'节'+"  "+classtitle+'<span class="msgTime">'+startTime+'</span></li><div class="Msgcontent">'+classDec+'</div><div class="buy-btn">已购买</div></div>';
+                }
+                else{
+                  var isBuyThisClass = false;
+                    for(var j = 0 ; j < data.data.lesson.lessonBuyList.length; j ++){
+                      if(data.data.lesson.lessonBuyList[j].classNo == data.data.lesson.lessonDetail[i].classNo){
+                        isBuyThisClass = true;
+                        break;
+                      }
+                    }
+                    if(isBuyThisClass == true){
+                      var Lessonclass = '<div class="MsgBox" id='+classNo+'><li class="Msgfrom" >第'+classNo+'节'+"  "+classtitle+'<span class="msgTime">'+startTime+'</span></li><div class="Msgcontent">'+classDec+'</div><div class="buy-btn">已购买</div></div>';
+                
+                    }
+                    else{
+                        var Lessonclass = '<div class="MsgBox" id='+classNo+'><li class="Msgfrom" >第'+classNo+'节'+"  "+classtitle+'<span class="msgTime">'+startTime+'</span></li><div class="Msgcontent">'+classDec+'</div><div class="buy-btn">购买</div></div>';
+                
+                    }
+
+                }
+
                 
                   $("#everyclass").append(Lessonclass); 
 
               }
             
+
+
+/*买小课按钮*/
+$(".buy-btn").click(function(){
+
+var self = this;
+  var buyClassNo = $(this).parent('.MsgBox').attr("id");
+  
+    $.ajax({
+        type: "GET",
+        url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/buyLesson.action;jsessionid='+Sessionid,
+        data: {lessonId:BuyLessonId,buyType:"2",classNo:buyClassNo},
+        success: function (data) {                        
+
+        if(data.data.status=="success"){
+
+           layer.msg('购买成功,请在我的课程中查看',{time:1500});
+            
+                 $(self).html("已购买");
+            }else{
+
+                 layer.msg(data.data.info);
+         
+                 }                        
+              
+                },
+            error: function (a,b,c) {
+                layer.msg('网络超时，请重试');
+                 }
+            });
+
+  
+});
+
+
+
+
+
         },
         error: function () {
                   /*alert("登陆超时，请重新登陆");*/
@@ -83,8 +149,10 @@ $('#buyAll').click(function(){
         if(data.data.status=="success"){
 
            layer.msg('购买成功',{time:1500});
+           $(".buy-btn").html("已购买")
             }else if(data.data.status=="false"){
                  layer.msg(data.data.info);
+                 
                  }                        
               
                 },
@@ -96,31 +164,6 @@ $('#buyAll').click(function(){
 
 
 
-$(".buy-btn").click(function(){
-
-	var buyClassNo = $(this).parent('.MsgBox').attr("id");
-  
-    $.ajax({
-        type: "GET",
-        url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/buyLesson.action?',
-        data: {lessonId:buylesId,buyType:"2",classNo:buyClassNo},
-        success: function (data) {                        
-
-        if(data.data.status=="success"){
-
-           layer.msg('购买成功',{time:1500});
-            }else{
-                 layer.msg('错误，请重试');
-                 }                        
-              
-                },
-            error: function (a,b,c) {
-                layer.msg('网络超时，请重试');
-                 }
-            });
-
-	
-});
 
 
 

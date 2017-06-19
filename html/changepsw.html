@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <script type="text/javascript" src="../lib/jquery.js"> </script>
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -72,6 +74,14 @@
 <script type="text/javascript" src="../lib/jquery.js"> </script>
  <script type="text/javascript" src="../lib/md5.js"></script>   
     <script type="text/javascript">
+
+
+layui.use('layer', function(){
+  var layer = layui.layer;
+});
+
+
+
         function getCookie(c_name) {
               var c_value = document.cookie;
               var c_start = c_value.indexOf(" " + c_name + "=");
@@ -96,6 +106,9 @@
 var Sessionid = getCookie("JSESSIONID");
 
 $("#sub").click(function(){
+
+
+
         var password = hex_md5($("#oldpsw").val()),
             newPassword = hex_md5($("#newpsw").val()),
             turenewpsw = hex_md5($("#turenewpsw").val());  
@@ -108,13 +121,18 @@ $("#sub").click(function(){
               url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/modifyPassword.action;jsessionid='+Sessionid,
               success:function(data) {
                 if(data.data.status=="success"){
-                    alert("修改成功，请重新登陆 ") ;
+                    layer.msg("修改成功，请重新登陆 ") ;
+
                     parent.layer.closeAll(); 
                     parent.location.href="../html/login.html"       
                   }
               },
               error:function(data) {
-                    alert(data.errMsg)
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
                   }
               }); 
 

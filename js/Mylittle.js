@@ -43,21 +43,41 @@ $(document).ready(function(){
         url: 'http://211.159.152.210:8188/AreTalkServer/Web/Api/getMyLessons.action;jsessionid='+Sessionid+"?type=2",
         data: {},
         success: function (data) {
-          // 大图课
-          $("#remind-lesson #remind-lesson-img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[0].headurl);
-          $("#lesson-name").html(data.data.lessonList[0].title);
 
-          for (var i = 0; i<data.data.lessonList[0].lessonLabel.length; i++) {
-              $("#lv-tag").append(data.data.lessonList[0].lessonLabel[i].label);
+          /*-----------------------------小图课-----------------------------*/
+      var headurl;var showTime;
+var isFirstClass = false;
+          for (var i = 1; i<data.data.lessonList.length; i++) {
+
+              if(data.data.lessonList[i].status !=1){
+                continue;
+              }
+              if(isFirstClass == false){
+                isFirstClass = true;
+
+       // 大图课
+          $("#remind-lesson #remind-lesson-img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[i].headurl);
+          $("#lesson-name").html(data.data.lessonList[i].title);
+          $("#remind-lesson-dec").html(data.data.lessonList[i].lessonDescribe);
+          for (var j = 0; i<data.data.lessonList[i].lessonLabel.length; j++) {
+
+            if(j == 0){
+              $("#lv-tag").append(data.data.lessonList[i].lessonLabel[j].label);
+              
+              }
+              else{
+              $("#lv-tag").append(" " + data.data.lessonList[i].lessonLabel[j].label);
+            }
+                          
             }
 
-          $("#les-dur").html(data.data.lessonList[0].duration+"Min");  
-          $("#les-num").html(data.data.lessonList[0].currentStudents+"/"+data.data.lessonList[0].maxStudents);              
-          $("#teacher-name").html("教师："+data.data.lessonList[0].name);
-          $("#teacherHead img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[0].userImgUrl);
-          var lessonId = data.data.lessonList[0].lessonId;
-          var entryclassNo = data.data.lessonList[0].currentLesson;
-          var Biglessoning = data.data.lessonList[0].realStartTime;
+          $("#les-dur").html(data.data.lessonList[i].duration+"Min");  
+          $("#les-num").html(data.data.lessonList[i].currentStudents+"/"+data.data.lessonList[i].maxStudents);              
+          $("#teacher-name").html("教师："+data.data.lessonList[i].name);
+          $("#teacherHead img").attr("src","http://211.159.152.210:8188"+data.data.lessonList[i].userImgUrl);
+          var lessonId = data.data.lessonList[i].lessonId;
+          var entryclassNo = data.data.lessonList[i].currentLesson;
+          var Biglessoning = data.data.lessonList[i].realStartTime;
         if (Biglessoning==null) {
             
           $("#enrty-btn").text("未到上课时间");
@@ -66,10 +86,10 @@ $(document).ready(function(){
             $("#enrty-btn").attr("onclick",'openLive("'+LoginedName+'","'+stupsw+'",'+lessonId+','+entryclassNo+')');
           }
           
-          /*-----------------------------小图课-----------------------------*/
-      var headurl;var showTime;
 
-          for (var i = 1; i<data.data.lessonList.length; i++) {
+                continue;
+              }
+
           var theclassNo = data.data.lessonList[i].currentLesson;
           var starTime = data.data.lessonList[i].time;                  
             var showTime = starTime.slice(0,10)+" "+starTime.slice(11,19);            
@@ -97,7 +117,11 @@ var Les_Card ='<div class="Card mask-wrapper"><div class="card-pic"><img src='+h
 
           
           }
-       
+       if(isFirstClass == false){
+            $("#showBOX").hide();
+            $("#nobuybox").show();
+
+       }       
           
         },
         error: function () {

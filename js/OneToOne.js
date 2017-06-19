@@ -74,7 +74,7 @@ var Sessionid = getCookie("JSESSIONID");
            s = "0"+s
         }
         var NY=year+'-'+month+"-";
-        var ZTime = " "+h+":"+m+":"+s;
+        var ZTime = " "+"00"+":"+"00"+":"+"00";
         var NowRiQi = NY+riqi+ZTime;
 
         return NowRiQi
@@ -94,7 +94,12 @@ function GetLesson(minD,maxD){
         success: function (data) {
    
         	$(".owl-carousel").empty();//清空之前内容再添加
-
+            if(data.data.lessonList.length==0){
+              $(".lesson-Card").hide();
+            
+              $("#nobuybox").show();
+              return;
+}
         
  			    var headurl;var Time;
         	for (var i =0; i<data.data.lessonList.length/2; i++) {
@@ -118,7 +123,7 @@ function GetLesson(minD,maxD){
                   headurl = "../img/card.png"                  
                   };
 
-      var Les_Card2 ='<div class="Card mask-wrapper"><div class="card-pic" style="background-image:url('+headurl+')";></div><div class="card-text">'+data.data.lessonList[i].name+'老师：'+data.data.lessonList[i].title+'</div><div class="card-info"><img src="../img/clock.png" alt=""><span>'+Time+'</span></div><img class="card-teacherImg" src="http://211.159.152.210:8188'+data.data.lessonList[i].userImgUrl+'" alt=""><div class="mask-inner">'+data.data.lessonList[i].lessonDescribe+'<div class="buybuybuy" onclick="buylesson('+data.data.lessonList[i].lessonId+')">购买本课</div></div></div>'
+      var Les_Card2 ='<div class="Card mask-wrapper"><div class="card-pic"><img src="'+headurl+'" alt="" style="width:100%;height:100%"/></div><div class="card-text">'+data.data.lessonList[i].name+'老师：'+data.data.lessonList[i].title+'</div><div class="card-info"><img src="../img/clock.png" alt=""><span>'+Time+'</span></div><img class="card-teacherImg" src="http://211.159.152.210:8188'+data.data.lessonList[i].userImgUrl+'" alt=""><div class="mask-inner">'+data.data.lessonList[i].lessonDescribe+'<div class="buybuybuy" onclick="buylesson('+data.data.lessonList[i].lessonId+')">购买本课</div></div></div>'
       $("#owl2").append(Les_Card2);      
           };  
 
@@ -137,11 +142,16 @@ function GetLesson(minD,maxD){
 
         },
         error: function (a,b,c) {
-            
-             /*   	alert("登陆超时，请重新登陆");*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })     
                  }
         });
 
+
+$('html, body', window.top.document).animate({scrollTop:0}, 10);;
 }
 
 

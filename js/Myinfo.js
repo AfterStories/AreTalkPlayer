@@ -46,7 +46,11 @@ function getcountry(){
           }    console.log(countryArry)              
               },
           error:function() {
-                
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })                
               }    
           });
 };
@@ -69,7 +73,11 @@ function getMyWallet(){
              		}
               },
           error:function() {
-                
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })                
               }    
           });
 }
@@ -115,7 +123,11 @@ function getMyWallet(){
 
                   		},
               error:function(data,a,b,c) {
-                /*alert("登录超时请重新登陆")*/
+                   layer.confirm('登录超时，请重新登陆', {
+                      btn: ['好的'] //按钮
+                    }, function(){
+                      location.href="../html/login.html"
+                    })
                   }
                         });
 

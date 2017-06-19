@@ -40,6 +40,9 @@ jsonpCallback:'loginHandler',
                 if(data.data.status=="success"){
     
                    layer.msg('登陆成功',{time:1500}); 
+
+
+
                     setTimeout(function () {
                          location.href="../html/home.html?LoginedName="+TheuserName+'&stupsw='+Thepassword;
                     }, 1600);

@@ -1,7 +1,7 @@
 
 body,html{
 	width:1282px;
-	height:727px;
+	
 
 	margin: 0;
 	padding:0;
@@ -22,7 +22,7 @@ ul,li{
 } 
 header{
 	
-	width:1264px;
+	
 	height: 42px;
 	background-color: #fff;	
 	display: flex;
@@ -39,7 +39,7 @@ header{
 	background-image: url("../img/logo.png") ;
 	top: 3px;;
 }
-#RInfo{
+/* #RInfo{
 	width: 160px;
 	height: 34px;	
 	font-size: 18px;
@@ -49,7 +49,7 @@ header{
 	top: 8px;
 
 }	
-
+ */
 #RInfo span{
 	margin-left: 6px;
 	color:#6999f0;
@@ -66,7 +66,7 @@ header{
 	display: flex;
 }
 #main{
-	height:685px;
+	height:678px;
 	width:100%;
 	background-color: #6999f0;
 	position: relative;
@@ -93,7 +93,7 @@ header{
 	top:60px;
 }
 #Lessoniframe{
-	height:610px;
+	height:602px;
 	position: relative;
 	left:116px;
 	top:-20px;

@@ -11,6 +11,18 @@ body,html{
 	height: 610px;
 
 }
+#nobuybox{
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50%;
+    top: -50%;
+}
+#nobuyimg{
+	width: 100%;
+	height: 100%;
+}
 #right{
 	width:282px;
 	height:610px;
