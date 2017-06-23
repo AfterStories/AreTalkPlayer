@@ -1,3 +1,5 @@
+var wait=60;  
+
 layui.use(['jquery', 'form', 'upload','laydate','layer'], function() {
   var $ = layui.jquery,
   layedit = layui.layedit,
@@ -64,9 +66,12 @@ $(document).ready(function() {
 var checkInfoValid;
 function GetCode(){
 
+
 	username = $("#username").val();
 	PhoneNumber = $("#PhoneNumber").val();
 	PhoneLocaltion = $('.ChooseBox option:selected') .val();//Select选中的值
+
+
 
 	if (username&&PhoneNumber){
 			$.ajax({
@@ -86,7 +91,7 @@ function GetCode(){
         									url: 'http://211.159.152.210:8188/AreTalkServer/Verify/sendPhoneNoVerifyCode.action',
         									success:function(data) {
         												if (data.status="success") {
-        													
+        													 time();
         													 layer.msg('正在发送验证码，请查收手机短信',{time:1500});
         												}
         											
@@ -162,3 +167,23 @@ function Register(){
 
 
 
+
+
+function time(){
+	        if (wait == 0) { 
+            $("#GetCode").removeAttr("disabled");           
+            $("#GetCode").html("获取验证码");
+            $("#GetCode").css("background-color", "#509ee1"); 
+            wait = 60;  
+        } else {  
+            $("#GetCode").attr("disabled", "true");  
+            $("#GetCode").css("background-color", "#9da2a7"); 
+            $("#GetCode").html("重新发送"+ wait);  
+            wait--;  
+            setTimeout(function() {  
+                time()  
+            },  
+            1000)  
+        }  
+
+}
