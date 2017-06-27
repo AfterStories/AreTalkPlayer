@@ -95,11 +95,13 @@ function GetLesson(minD,maxD){
    
         	$(".owl-carousel").empty();//清空之前内容再添加
             if(data.data.lessonList.length==0){
-              $(".lesson-Card").hide();
-            
+              $(".lesson-Card").hide();            
               $("#nobuybox").show();
               return;
-}
+            }else{
+              $(".lesson-Card").show();            
+              $("#nobuybox").hide();
+            }
         
  			    var headurl;var Time;
         	for (var i =0; i<data.data.lessonList.length/2; i++) {

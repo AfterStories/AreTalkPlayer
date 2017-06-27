@@ -102,6 +102,10 @@ if(data.data.lessonList.length==0){
   $("#lesson-Card").hide();
   $("#nobuybox").show();
   return;
+}else{
+   $("#remind-lesson").show();
+  $("#lesson-Card").show();
+  $("#nobuybox").hide(); 
 }
 
 var BigLesCARD = '<img src="http://211.159.152.210:8188'+data.data.lessonList[0].headurl+'" alt="" id="remind-lesson-img"><div id="remind-lesson-detail"><span id="lesson-name">'+data.data.lessonList[0].title+'</span><span id="lv-tag"></span></div><div id="remind-lesson-dec">'+data.data.lessonList[0].lessonDescribe+'</div><div id="remind-lesson-info"><img src="../img/clock.png" alt="" id="time"><div id="les-dur">'+data.data.lessonList[0].duration+'Min</div><img src="../img/stundent.png" alt="" id="stuNum"><div id="les-num">'+data.data.lessonList[0].currentStudents+'</div></div><div id="lesson-entry"><div id="teacherHead"><img src="http://211.159.152.210:8188'+data.data.lessonList[0].userImgUrl+'" alt="teacher"></div><span id="teacher-name">教师：'+data.data.lessonList[0].name+'</span><span id="buy-info"></span><div id="enrty-btn" onclick="buylesson('+data.data.lessonList[0].lessonId+')">购买</div><div class="clear"></div>'
