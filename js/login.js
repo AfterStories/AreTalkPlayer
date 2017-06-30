@@ -1,9 +1,53 @@
-          
-                
-layui.use('layer', function(){
-  var layer = layui.layer;      
 
-});
+
+$(document).ready(function(){ 
+
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer;
+  var form = layui.form();
+
+
+form.verify({
+  username: function(value, item){ //value：表单的值、item：表单的DOM对象
+    if (value.length==0) {
+      return '必填项不能为空';        
+    }
+    if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+      return '用户名不能有特殊字符';
+    }
+    if(/(^\_)|(\__)|(\_+$)/.test(value)){
+      return '用户名首尾不能出现下划线\'_\'';
+    }
+
+    if(!(/^[\S]{1,50}$/.test(value))){
+      return '用户名不能有空格';
+    }
+
+
+
+  }
+  
+
+});      
+        
+      
+
+form.on('submit(PClogin)', function(data){
+
+ Login()
+        
+})
+
+});  //use      
+      
+
+
+
+})//ready
+ 
+
+
+
 
 
 var LoginURL = "http://211.159.152.210:8188/AreTalkServer/Web/Login/"
@@ -11,7 +55,7 @@ var LoginURL = "http://211.159.152.210:8188/AreTalkServer/Web/Login/"
 var TheuserName,Thepassword;
 
 function Login() {
-    
+
         var userName = $("#username").val();
         TheuserName = userName;
         var password = hex_md5($("#Password").val());
@@ -22,17 +66,10 @@ function Login() {
             layer.msg('请输入您的用户名与密码。',{time:1500});
             return false;
         }else{
-
-                $.ajax({
+            $.ajax({
                     type: "GET",
                     url: LoginURL+"login.action?userName="+userName+"&password="+password+"&userType=1",
                     data: {},
-/*
-crossDomain: true, 
-dataType:'jsonp',
-jsonp:"callback",
-jsonpCallback:'loginHandler',
-*/
                 success: function (data) {                        
                 CreateCookie(TheuserName, Thepassword, 30);
                 CreateCookie("JSESSIONID", data.data.JSESSIONID, 30);
@@ -60,16 +97,11 @@ jsonpCallback:'loginHandler',
                          }
                     });
 
-            } 
+            }
 
 
 }
 
-/*function loginHandler(data){
-
-
-}
-*/
 
 function getSessionId(){  
     var c_name = 'JSESSIONID';  

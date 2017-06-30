@@ -6,6 +6,11 @@
 	<title>AreTalk学生客户端登录</title>
 	<link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
 	<link rel="stylesheet" href="../css/login.css">
+	<script type="text/javascript" src="../lib/jquery.js"> </script>
+	<script type="text/javascript" src="../lib/layui/layui.js"> </script>
+	<script type="text/javascript" src="../lib/md5.js"></script>
+	<script type="text/javascript" src="../js/login.js"> </script>
+
 </head>
 <body >
 
@@ -21,19 +26,21 @@
 		<div id="imgICON">
 			
 		</div>
-		<div id="loginbox">
+		<div id="loginbox" class="layui-form">
 			<div id="loginTitle" class="clear">
 				<span id="LTitle">会员登录</span>
 				<a id="RTitle" href="register.html">立即注册</a>
 			</div>
 			<div id="loginInput" class="clear">
-			<div class="loginImgBox" style="margin-top:20px;"><img src="../img/phone.png" alt="username" class="loginImg"></div>
-			<input id="username" class="userLogin"  type="text" placeholder="Your Account" > 
-			<div class="loginImgBox"><img src="../img/password.png" alt="Password" class="loginImg"></div>
-			<input id="Password" type="password" class="userLogin" name="password" placeholder="Your Password"/>
+			<div class="loginImgBox" style="margin-top:20px;"><img src="../img/phone.png" class="loginImg"></div>
+
+			<input id="username" name="username" class="userLogin"  type="text" lay-verify="username"  placeholder="请输入帐号">
+
+			<div class="loginImgBox"><img src="../img/password.png" class="loginImg"></div>
+			<input id="Password" type="password" class="userLogin" name="password" lay-verify="required" placeholder="请输入密码">
 			
 			<a id="forget" href=" #"><!-- 忘记密码？ --></a>
-			<div id="loginBTN" onclick="Login();">立即登录</div>
+			<div id="loginBTN" lay-submit lay-filter="PClogin">立即登录</div>
 			</div>
 		</div>
 	</div>
@@ -51,11 +58,7 @@
 		</div>
 	</footer>
 </body>
-<script type="text/javascript" src="../lib/jquery.js"> </script>
-<script type="text/javascript" src="../lib/layui/layui.js"> </script>
-<script type="text/javascript" src="../lib/md5.js"></script>
-<script type="text/javascript" src="../js/login.js"> </script>
-<script type="text/javascript" src="../js/register.js"> </script>
+
     <script>
     $(document).ready(function() {
 
